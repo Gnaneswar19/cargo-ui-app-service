@@ -1,0 +1,68 @@
+/* Logo styling */
+.logo img {
+  height: 45px;
+  width: 90px;
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(43, 43, 247);
+  color: white;
+  padding: 1rem;
+}
+
+/* Wrapper for links and auth buttons */
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Link styling */
+.nav-links a,
+.auth-buttons a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Sign Up button styling */
+.auth-buttons a.signup {
+  background-color: #f44336;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Mobile menu styling */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  padding: 10px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .nav-links,
+  .auth-buttons {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: inline;
+  }
+}

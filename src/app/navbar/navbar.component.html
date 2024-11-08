@@ -1,0 +1,37 @@
+<div class="navbar">
+  <!-- Logo with image from assets -->
+  <div class="logo">
+    <img src="../../assets/main logo.png" alt="CargoService Logo" />
+  </div>
+
+  <!-- Links and Auth buttons aligned to the right side -->
+  <div class="nav-items">
+    <div class="nav-links">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/services">Services</a>
+      <a routerLink="/tracking">Tracking</a>
+      <a routerLink="/about">About Us</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+
+    <div class="auth-buttons">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/signup" class="signup">Sign Up</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-icon" (click)="toggleMobileMenu()">
+    <span>&#9776;</span>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div *ngIf="isMobileMenuOpen" class="mobile-menu">
+  <a routerLink="/home" (click)="toggleMobileMenu()">Home</a>
+  <a routerLink="/services" (click)="toggleMobileMenu()">Services</a>
+  <a routerLink="/tracking" (click)="toggleMobileMenu()">Tracking</a>
+  <a routerLink="/about" (click)="toggleMobileMenu()">About Us</a>
+  <a routerLink="/contact" (click)="toggleMobileMenu()">Contact</a>
+  <a routerLink="/login" (click)="toggleMobileMenu()">Login</a>
+  <a routerLink="/signup" (click)="toggleMobileMenu()" class="signup">Sign Up</a>
+</div>

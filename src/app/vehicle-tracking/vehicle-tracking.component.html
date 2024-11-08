@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- <div class="sidebar" [ngClass]="{ 'closed': sidebarClosed }">
+    <button class="close-button" (click)="toggleSidebar()">×</button>
+    <div *ngIf="sidebarClosed" class="open-button" (click)="toggleSidebar()">☰</div>
+
+    <div *ngIf="!sidebarClosed">
+      <input type="text" placeholder="Search Vehicles" class="search-bar" [(ngModel)]="searchTerm"
+        (input)="searchVehicles()" />
+
+      <div class="vehicle-list">
+        <div *ngFor="let vehicle of filteredVehicles" class="vehicle-item" (click)="showVehicleLocation(vehicle)"
+          [ngClass]="{'selected': selectedVehicle?.vehicleNo === vehicle.vehicleNo}">
+          <p>Vehicle No: {{ vehicle.vehicleNo }}</p>
+          <p>Cargo ID: {{ vehicle.cargoId }}</p>
+          <p>Status: {{ vehicle.status }}</p>
+          <p>Address: {{ vehicle.address || 'Fetching address...' }}</p>
+          <p>Last Updated: {{ vehicle.updatedDate | date:'short' }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div> -->
+
+  <div class="map-container" [ngClass]="{ 'full-width': sidebarClosed }">
+    <div>
+      <div class="status-cards">
+        <div class="status-box" *ngFor="let status of statuses">
+          <div [class]="'icon ' + status.iconClass"></div>
+          <div class="status-info">
+            <p>{{ status.label }}</p>
+            <h2>{{ status.count }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="map"></div>
+  </div>
+</div>

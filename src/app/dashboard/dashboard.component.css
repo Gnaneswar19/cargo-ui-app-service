@@ -1,0 +1,27 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .status-cards {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+  }
+  
+  .card {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .sidebar {
+    width: 300px;
+    padding: 1em;
+    background-color: #f4f4f4;
+  }
+  
+  .map-section {
+    flex: 1;
+    height: 400px;
+  }
+  
