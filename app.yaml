@@ -1,0 +1,12 @@
+runtime: nodejs18
+env: standard
+
+handlers:
+  - url: /
+    static_files: dist/cargoo/browser/index.html
+    upload: dist/cargoo/browser/index.html
+
+  - url: /(.*)
+    static_files: dist/cargoo/browser/\1
+    upload: dist/cargoo/browser/(.*)
+    secure: always
