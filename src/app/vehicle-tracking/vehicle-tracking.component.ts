@@ -125,7 +125,7 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
   }
 
   private initMap(): void {
-    this.map = L.map('map').setView([17.499963228114066, 78.3989000576314], 13);
+    this.map = L.map('map').setView([-30.5595, 22.9375], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '© OpenStreetMap contributors',
