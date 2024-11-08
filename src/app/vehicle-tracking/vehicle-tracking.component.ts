@@ -32,6 +32,7 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
   private map!: L.Map;
   private markers: Map<string, L.Marker> = new Map();
   private locationSubscription?: Subscription;
+  private reloadInterval!: number;
 
   sidebarClosed = false;
   searchTerm = '';
@@ -54,10 +55,15 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.initMap();
     this.loadVehicles();
+
+    this.reloadInterval = window.setInterval(() => this.loadVehicles(), 3000);
   }
 
   ngOnDestroy(): void {
     this.locationSubscription?.unsubscribe();
+    if (this.reloadInterval) {
+      window.clearInterval(this.reloadInterval);
+    }
   }
 
   private loadVehicles(): void {
@@ -125,7 +131,7 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
   }
 
   private initMap(): void {
-    this.map = L.map('map').setView([-30.5595, 22.9375], 13);
+    this.map = L.map('map').setView([-30.5595, 22.9375], 5);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '© OpenStreetMap contributors',
