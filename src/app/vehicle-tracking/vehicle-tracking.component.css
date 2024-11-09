@@ -108,7 +108,7 @@
     font-size: 14px;
   }
 
-  /* Map container styling */
+  /*--------------------- Map container styling -----------------------------*/
   .map-container {
     flex-grow: 1;
     transition: flex-grow 0.3s ease;
@@ -124,14 +124,14 @@
   }
 
 
-  /* Top section with status cards */
+  /* -----------------------Top section with status cards ---------------------*/
   .status-cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   .status-box {
@@ -192,4 +192,49 @@
     background-image: url('../../assets/car\ \(4\).png');
   }
 
+    /* ======================== */
+
+    .status-cards-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      /* margin-bottom: 2px; */
+    }
+    
+    .toggle-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1;
+      margin-right: 600px;
+    }
+    
+    .toggle-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      /* padding: 8px; */
+      font-size: 20px; /* Adjust to make the icon visible */
+      transition: color 0.3s ease;
+    }
+    
+    .toggle-button.open {
+      color: #FF5733;
+      /* Color when closed */
+    }
+    
+    .toggle-button.close {
+      color: rgb(41, 41, 240);
+       /* Color when open */
+    }
+    
     

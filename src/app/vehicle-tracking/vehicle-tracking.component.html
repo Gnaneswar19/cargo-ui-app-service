@@ -21,7 +21,7 @@
     </div>
   </div> -->
 
-  <div class="map-container" [ngClass]="{ 'full-width': sidebarClosed }">
+  <!-- <div class="map-container" [ngClass]="{ 'full-width': sidebarClosed }">
     <div>
       <div class="status-cards">
         <div class="status-box" *ngFor="let status of statuses">
@@ -36,4 +36,29 @@
 
     <div id="map"></div>
   </div>
+</div> -->
+
+<div class="map-container" [ngClass]="{ 'full-width': sidebarClosed }">
+  <div class="status-cards-container">
+    <button
+    class="toggle-button"
+    (click)="toggleStatusCards()"
+    [ngClass]="{ 'open': statusCardsVisible, 'close': !statusCardsVisible }"
+    [ngStyle]="{ 'color': statusCardsVisible ? '#FF5733' : '#3498db' }"
+  >
+    <i [class]="statusCardsVisible ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+  </button>
+  
+
+    <div class="status-cards" *ngIf="statusCardsVisible">
+      <div class="status-box" *ngFor="let status of statuses">
+        <div [class]="'icon ' + status.iconClass"></div>
+        <div class="status-info">
+          <p>{{ status.label }}</p>
+          <h2>{{ status.count }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="map" style="margin-top: 26px;"></div>
 </div>

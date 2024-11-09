@@ -33,6 +33,7 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
   private markers: Map<string, L.Marker> = new Map();
   private locationSubscription?: Subscription;
   private reloadInterval!: number;
+  statusCardsVisible = true;
 
   sidebarClosed = false;
   searchTerm = '';
@@ -47,7 +48,7 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
   ];
 
   constructor(
-    private vehicleLocationService: VehicleLocationService,
+   
     private addressLookupService: AddressLookupService,
     private vehicleTrackerService: VehicleTrackerService
   ) {}
@@ -160,6 +161,7 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
           <p>Status: ${vehicle.status}</p>
           <p>VehicleSpeed: ${vehicle.speed}</p>
           <p>Updated: ${new Date(vehicle.updatedDate).toLocaleString()}</p>
+          <p>Address: ${ vehicle.address || 'Fetching address...' }</p>
         </div>
       `)
       .addTo(this.map);
@@ -191,5 +193,8 @@ export class VehicleTrackingComponent implements OnInit, OnDestroy {
 
   toggleSidebar(): void {
     this.sidebarClosed = !this.sidebarClosed;
+  }
+  toggleStatusCards() {
+    this.statusCardsVisible = !this.statusCardsVisible;
   }
 }
